@@ -1,28 +1,29 @@
-# Calorie Counter (React + styled-components)
+# Water Intake Reminder (React + styled-components)
 
 ![alt text](image.png)
 
-**Live Demo:** https://a2rp.github.io/calorie-counter/
+**Live Demo:** https://a2rp.github.io/water-intake/
 
-A clean, frontend-only Calorie Counter built with **React + styled-components**. Log meals, track daily calories vs goal, search, edit, and clear a day. Transparent UI that blends with a black/dark theme.
+A lightweight, frontend-only water tracker built with **React + styled-components**. Log glasses, see a **visual progress ring**, and configure **daily goal** and **per-glass (ml)** size. Transparent UI to blend with a black/dark theme.
 
 ## Features
 
--   Add meals with **name, calories, type (Breakfast/Lunch/Dinner/Snack/Other), date**
--   **Daily total vs Goal** with % and remaining/over hint
+-   One-tap **+1 / +2 / +3** and custom add
+-   **Progress ring** with % completed
+-   **Daily goal** (set/reset with confirm)
+-   **Per-glass size (ml)** (set/reset with confirm)
 -   **Date controls**: Prev / Today / Next
--   **Grouped by meal type**, quick search on the selected day
--   Edit & delete meals, **Clear Day** (with confirm)
+-   **Undo last** and **Clear Day** (with confirm)
 -   **LocalStorage** persistence
 -   **Custom confirm modal** (no portals)
--   Dark/black theme friendly (no background overrides)
+-   Black-theme friendly (no background overrides)
 
 ## Local Install
 
 ```bash
 # 1) Clone the repo
-git clone https://github.com/a2rp/calorie-counter.git
-cd calorie-counter
+git clone https://github.com/a2rp/water-intake.git
+cd water-intake
 
 # 2) Install dependencies
 npm i
