@@ -1,97 +1,76 @@
+import { FaChartLine, FaDatabase, FaShieldAlt } from "react-icons/fa";
+
 import { Styled } from "./styled";
 
-export default function About() {
+const features = [
+    {
+        icon: <FaDatabase aria-hidden="true" />,
+        title: "Local Storage",
+        text: "Your water records stay in your browser and remain available after refresh.",
+    },
+    {
+        icon: <FaChartLine aria-hidden="true" />,
+        title: "Daily Progress",
+        text: "Track glasses, milliliters, daily goals, and progress for the selected date.",
+    },
+    {
+        icon: <FaShieldAlt aria-hidden="true" />,
+        title: "Private by Design",
+        text: "The tracker works locally without requiring an account or sending your intake data to a server.",
+    },
+];
+
+const About = () => {
     return (
-        <>
-            <Styled.Wrapper>
-                <Styled.Heading>About Developer</Styled.Heading>
-                <Styled.Row>
-                    <Styled.Col1>Name</Styled.Col1>
-                    <Styled.Col2>Ashish Ranjan</Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Phone</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="tel:+918123747965"
-                        >+91 8123747965</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Email</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="mailto:ash.ranjan09@gmail.com"
-                        >ash.ranjan09@gmail.com</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Nationality</Styled.Col1>
-                    <Styled.Col2>The Republic of India</Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Website</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="https://www.ashishranjan.net/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >https://www.ashishranjan.net/</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Old Website</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="http://www.ashishranjan.in/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >http://www.ashishranjan.in/</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>Facebook</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="https://www.facebook.com/theash.ashish/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >https://www.facebook.com/theash.ashish/</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>LinkedIn</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="https://www.linkedin.com/in/aashishranjan/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >https://www.linkedin.com/in/aashishranjan/</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>YouTube</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="https://www.youtube.com/channel/UCLHIBQeFQIxmRveVAjLvlbQ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >https://www.youtube.com/channel/UCLHIBQeFQIxmRveVAjLvlbQ</a>
-                    </Styled.Col2>
-                </Styled.Row>
-                <Styled.Row>
-                    <Styled.Col1>GitHub</Styled.Col1>
-                    <Styled.Col2>
-                        <a
-                            href="https://github.com/a2rp"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >https://github.com/a2rp</a>
-                    </Styled.Col2>
-                </Styled.Row>
-            </Styled.Wrapper>
-        </>
+        <Styled.Wrapper id="about">
+            <Styled.Container>
+                <Styled.Header>
+                    <Styled.Label>About The App</Styled.Label>
+
+                    <Styled.Title>
+                        A simple way to keep hydration visible
+                    </Styled.Title>
+
+                    <Styled.Text>
+                        Water Intake is a lightweight daily hydration tracker
+                        designed to make logging water quick and easy. Set a
+                        daily target, choose your glass size, review previous
+                        days, and keep a clear record of every entry.
+                    </Styled.Text>
+                </Styled.Header>
+
+                <Styled.Grid>
+                    {features.map(({ icon, title, text }) => (
+                        <Styled.Card key={title}>
+                            <Styled.IconBox>{icon}</Styled.IconBox>
+
+                            <Styled.CardTitle>{title}</Styled.CardTitle>
+
+                            <Styled.CardText>{text}</Styled.CardText>
+                        </Styled.Card>
+                    ))}
+                </Styled.Grid>
+
+                <Styled.Developer>
+                    <Styled.DeveloperLabel>Developed by</Styled.DeveloperLabel>
+
+                    <Styled.DeveloperName
+                        href="https://www.ashishranjan.net/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ashish Ranjan
+                    </Styled.DeveloperName>
+
+                    <Styled.DeveloperText>
+                        Full-Stack Web Developer building practical web
+                        applications, developer tools, and useful digital
+                        products.
+                    </Styled.DeveloperText>
+                </Styled.Developer>
+            </Styled.Container>
+        </Styled.Wrapper>
     );
-}
+};
 
-
+export default About;
